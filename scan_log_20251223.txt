@@ -1,0 +1,107 @@
+Starting scan on 192.168.56.102 at Tue Dec 23 05:37:38 AM EST 2025
+
+21: OPEN (ftp)
+Possible Metasploit exploits and access:
+  - Vulnerability: vsftpd 2.3.4 backdoor
+  - Metasploit Module: exploit/unix/ftp/vsftpd_234_backdoor
+  - Access: Root shell
+
+22: OPEN (ssh)
+25: OPEN (smtp)
+53: OPEN (domain)
+80: OPEN (http)
+Possible Metasploit exploits and access:
+  - Vulnerability: Multiple web app flaws (e.g., SQLi, command injection in DVWA, Mutillidae, phpMyAdmin)
+  - Access: Code execution, data disclosure
+
+111: OPEN (sunrpc)
+139: OPEN (netbios-ssn)
+Possible Metasploit exploits and access:
+  - Vulnerability: Samba symlink traversal and weak shares
+  - Metasploit Module: auxiliary/admin/smb/samba_symlink_traversal
+  - Access: Root filesystem access
+
+445: OPEN (microsoft-ds)
+Possible Metasploit exploits and access:
+  - Vulnerability: Samba symlink traversal and weak shares
+  - Metasploit Module: auxiliary/admin/smb/samba_symlink_traversal
+  - Access: Root filesystem access
+
+512: OPEN (exec)
+Possible Metasploit exploits and access:
+  - Vulnerability: r-services misconfig (.rhosts)
+  - Access: Remote shell (requires rsh-client)
+
+513: OPEN (login)
+Possible Metasploit exploits and access:
+  - Vulnerability: r-services misconfig (.rhosts)
+  - Access: Remote shell (requires rsh-client)
+
+514: OPEN (shell)
+Possible Metasploit exploits and access:
+  - Vulnerability: r-services misconfig (.rhosts)
+  - Access: Remote shell (requires rsh-client)
+
+1099: OPEN (rmiregistry)
+1524: OPEN (ingreslock)
+Possible Metasploit exploits and access:
+  - Vulnerability: Ingreslock backdoor
+  - Access: Root shell (manual bind shell)
+
+2049: OPEN (nfs)
+Possible Metasploit exploits and access:
+  - Vulnerability: Writeable NFS export
+  - Access: Root filesystem access (e.g., via mount and SSH key injection)
+
+2121: OPEN (iprop)
+3306: OPEN (mysql)
+Possible Metasploit exploits and access:
+  - Vulnerability: Open MySQL root access (no password)
+  - Access: Database root privileges
+
+5432: OPEN (postgresql)
+Possible Metasploit exploits and access:
+  - Vulnerability: Weak PostgreSQL credentials (postgres:postgres)
+  - Access: Database access as postgres user
+
+Fallback Nmap detected: VNC(protocol3.3)  
+5900: OPEN (VNC(protocol3.3))
+Possible Metasploit exploits and access:
+  - Vulnerability: VNC weak password (password)
+  - Access: Remote desktop access
+
+6000: OPEN (x11)
+6667: OPEN (ircd)
+Possible Metasploit exploits and access:
+  - Vulnerability: UnrealIRCd 3.2.8.1 backdoor
+  - Metasploit Module: exploit/unix/irc/unreal_ircd_3281_backdoor
+  - Access: Root shell
+
+Fallback Nmap detected: ApacheJserv(Protocol  
+8009: OPEN (ApacheJserv(Protocol)
+Fallback Nmap detected: ApacheTomcat/CoyoteJSP  
+8180: OPEN (ApacheTomcat/CoyoteJSP)
+
+Scan complete. Open ports summary:
+  - 21: OPEN (ftp)
+  - 22: OPEN (ssh)
+  - 25: OPEN (smtp)
+  - 53: OPEN (domain)
+  - 80: OPEN (http)
+  - 111: OPEN (sunrpc)
+  - 139: OPEN (netbios-ssn)
+  - 445: OPEN (microsoft-ds)
+  - 512: OPEN (exec)
+  - 513: OPEN (login)
+  - 514: OPEN (shell)
+  - 1099: OPEN (rmiregistry)
+  - 1524: OPEN (ingreslock)
+  - 2049: OPEN (nfs)
+  - 2121: OPEN (iprop)
+  - 3306: OPEN (mysql)
+  - 5432: OPEN (postgresql)
+  - 5900: OPEN (VNC(protocol3.3))
+  - 6000: OPEN (x11)
+  - 6667: OPEN (ircd)
+  - 8009: OPEN (ApacheJserv(Protocol)
+  - 8180: OPEN (ApacheTomcat/CoyoteJSP)

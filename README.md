@@ -14,13 +14,20 @@ A collection of scripts for ethical hacking labs, starting with a bash port scan
 3. Output: Logs to `scan_log_YYYYMMDD.txt` with ports, services, and vuln notes.
 
 ## Lessons Learned
-- Handled nc output variations with regex parsing.
+- Handled nc output variations with regex parsing (e.g., "open" vs "succeeded").
 - Mapped services to common Metasploit modules for recon chaining (e.g., vsftpd backdoor).
-- Aligns with Security+/CEH scanning concepts.
+- Debugged git issues like unrelated histories for clean version control.
+- Aligns with Security+/CEH scanning concepts; quantifies skills for resume (e.g., "Automated detection of 10+ vulns in lab envs").
+
+## Script Evolution
+- **Initial Version**: Basic port scanning with nc for open/closed detection and simple vuln mapping.
+- **Enhancement 1**: Added Nmap fallback for resilient service fingerprinting, handling "unknown" cases from nc (reduced inaccuracies in lab tests).
 
 ## Future Plans
-- Integrate Nmap fallback.
-- Add argument parsing for custom targets/ports.
+- Add argument parsing for custom targets/ports (e.g., using getopts for flexibility).
+- Integrate Gobuster for automated web directory enumeration on detected HTTP ports.
+- Expand vuln array with version-specific checks (e.g., using Nmap $version for targeted exploits).
+- Add reporting: Generate Markdown summaries from logs for portfolio write-ups.
 
 ## License
 MIT (see LICENSE file).
