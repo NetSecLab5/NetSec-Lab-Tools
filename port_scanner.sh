@@ -39,6 +39,14 @@ for port in $PORTS; do
         # Fixed service parse: Grab the correct field (e.g., "ftp" from second parentheses)
         service=$(echo "$cleaned_output" | awk -F '[()]' '/open|succeeded/ { if (NF >= 4) print $4; else print "unknown" }' | sed 's/ //g' | head -1)  # Trim spaces
         if [ "$service" = "?" ] || [ -z "$service" ]; then service="unknown"; fi
+
+        if [ "$service" = "unknown" ]; then
+            nmap_output=$(sudo nmap -sV -p $port $TARGET 2>&1 | grep "^$port" | awk '{print $4 " " $5 " " $6}' | sed 's/ //g')
+            service=$(echo "$nmap_output" | awk '{print $1}')  # e.g., "ssh"
+            version=$(echo "$nmap_output" | awk '{print $2 " " $3}')  # e.g., "OpenSSH 4.7p1"
+            echo "Fallback Nmap detected: $service $version" >> $LOGFILE
+        fi
+
         echo "$port: $result ($service)" >> $LOGFILE
         
         # Add exploits if available (service first, then port fallback)
