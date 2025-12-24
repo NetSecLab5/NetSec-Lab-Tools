@@ -1,1 +1,1 @@
-echo "*.txt" > .gitignore
+scan_log_*.txt
